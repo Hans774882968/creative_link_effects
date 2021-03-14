@@ -1,0 +1,54 @@
+/*参考：https://tympanus.net/Development/CreativeLinkEffects/*/
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 20px 20px;
+    background-color: #16a085;
+    text-transform: uppercase;
+    letter-spacing: 1px;/*字符间距*/
+    font-weight: 400;
+    font-size: 1.35em;
+}
+
+.navbar a{
+    position: relative;/*让子元素的宽高有参考*/
+    overflow: hidden;/*隐藏白背景伪类*/
+    text-decoration: none;
+}
+
+.navbar a div{
+    padding: 10px 20px;
+    background-color: #0f7c67;
+    color: white;
+    transition: transform 0.3s;
+}
+
+.navbar a:before{
+    position: absolute;/*使脱离文档流*/
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 20px;
+    content: attr(data-hover);/*内容保持一致*/
+    overflow: hidden;/*防止溢出文本颜色污染div*/
+    background-color: white;
+    color: #0f7c67;
+    transition: transform 0.3s;
+    transform: translateX(-100%);/*滑块效果*/
+}
+
+.navbar a:hover:before{
+    transform: translateX(0);/*滑块效果*/
+}
+
+.navbar a:hover div{
+    transform: translateX(100%);/*滑块效果*/
+}

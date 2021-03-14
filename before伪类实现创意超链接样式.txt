@@ -1,0 +1,4 @@
+letter-spacing: 1px;把字符间距调大一点。
+a标签设置position: relative;让子元素（a的before伪类）的宽高有参考。overflow: hidden;隐藏白背景伪类。
+a的before伪类设置position: absolute;是通过脱离文档流来和div对齐到同一行。
+最后滑块效果是用before伪类和div hover前后的transform: translateX，以及相同的过渡时间来实现的。
